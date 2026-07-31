@@ -2,6 +2,9 @@
 // public/index.php - Front controller (uses app/Views/layouts/main.php)
 // Simple placeholder front controller for PSEMS. Replace with your framework/router as needed.
 
+// Application bootstrap (loads Composer autoload if present and provides fallback PSR-4)
+require_once __DIR__ . '/../app/bootstrap.php';
+
 // If you use Composer, autoload will be available at ../vendor/autoload.php
 if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
     require __DIR__ . '/../vendor/autoload.php';
@@ -35,7 +38,7 @@ ob_start();
     <h1 class="h4 mb-0">PSEMs</h1>
 </header>
 <main class="container py-4">
-    <p>Welcome to PSEMs. Replace this placeholder with your application front controller and views.</p>
+    <p>Welcome to PSEMS. Replace this placeholder with your application front controller and views.</p>
 </main>
 
 <script src="<?= asset('js/jquery.min.js') ?>"></script>
