@@ -1,0 +1,4 @@
+# Placeholder security log.
+# Keep sensitive logs out of version control in production.
+
+[SECURITY] Placeholder security.log created.

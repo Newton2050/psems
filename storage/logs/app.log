@@ -1,0 +1,4 @@
+# Placeholder log file for application logs.
+# This file is included so the logs/ directory is committed. In production you may want to add logs/ to .gitignore.
+
+[INFO] Placeholder app.log created. Remove or replace with real logs.
