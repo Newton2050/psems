@@ -1,6 +1,5 @@
 <?php
 namespace App\Controllers;
-
 use App\Core\Controller;
 use App\Models\Examination;
 use App\Models\Stream;
