@@ -1,0 +1,30 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Composer
+/vendor/
+/composer.lock
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+/storage/logs/
+
+# IDEs
+/.idea/
+/.vscode/
+
+# PHPUnit
+.phpunit.result.cache
+
+# Node
+/node_modules/
+/npm-debug.log
+/yarn-error.log
+
+# Build artifacts
+/public/build/

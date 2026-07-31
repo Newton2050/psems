@@ -1,0 +1,14 @@
+{
+  "name": "newton2050/psems",
+  "description": "PSEMs - PHP project",
+  "type": "project",
+  "require": {
+    "php": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Psems\\": "src/"
+    }
+  },
+  "license": "MIT"
+}
