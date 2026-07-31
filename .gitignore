@@ -6,6 +6,9 @@ Thumbs.db
 /vendor/
 /composer.lock
 
+# Local composer binary
+composer.phar
+
 # Environment files
 .env
 .env.local
@@ -14,12 +17,26 @@ Thumbs.db
 # Logs
 /storage/logs/
 
+# Runtime storage directories
+storage/cache/
+storage/uploads/
+storage/backups/
+
 # IDEs
 /.idea/
 /.vscode/
 
+# Swap files
+*.swp
+*.swo
+
 # PHPUnit
 .phpunit.result.cache
+.phpunit.cache
+
+# PHP QA tool caches
+.php-cs-fixer.cache
+.phpstan.cache
 
 # Node
 /node_modules/
@@ -28,3 +45,6 @@ Thumbs.db
 
 # Build artifacts
 /public/build/
+
+# Coverage
+coverage/
