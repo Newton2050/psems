@@ -70,8 +70,9 @@ class Database
     public static function insert(string $table, array $data): int
     {
         $columns = array_keys($data);
+        $quotedColumns = array_map(function($c){ return "`" . str_replace("`", "``", $c) . "`"; }, $columns);
         $placeholders = array_fill(0, count($data), '?');
-        $sql = sprintf("INSERT INTO %s (%s) VALUES (%s)", $table, implode(', ', $columns), implode(', ', $placeholders));
+        $sql = sprintf("INSERT INTO `%s` (%s) VALUES (%s)", str_replace("`", "``", $table), implode(', ', $quotedColumns), implode(', ', $placeholders));
         self::query($sql, array_values($data));
         return (int)self::getInstance()->lastInsertId();
     }
@@ -80,16 +81,16 @@ class Database
     {
         $sets = [];
         foreach (array_keys($data) as $column) {
-            $sets[] = "{$column} = ?";
+            $sets[] = "`" . str_replace("`", "``", $column) . "` = ?";
         }
-        $sql = sprintf("UPDATE %s SET %s WHERE %s", $table, implode(', ', $sets), $where);
+        $sql = sprintf("UPDATE `%s` SET %s WHERE %s", str_replace("`", "``", $table), implode(', ', $sets), $where);
         $params = array_merge(array_values($data), $whereParams);
         return self::query($sql, $params)->rowCount();
     }
     
     public static function delete(string $table, string $where, array $params = []): int
     {
-        $sql = sprintf("DELETE FROM %s WHERE %s", $table, $where);
+        $sql = sprintf("DELETE FROM `%s` WHERE %s", str_replace("`", "``", $table), $where);
         return self::query($sql, $params)->rowCount();
     }
     
